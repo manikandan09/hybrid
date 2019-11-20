@@ -7,7 +7,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /****************************************************************************/	
 	$scope.bn_adm_email = $cookieStore.get("bn_adm_email");
 
-	$http.post('admin_details.php', {'email': $scope.bn_adm_email})
+	$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/admin_details.php', {'email': $scope.bn_adm_email})
 	.success(function(data, status, headers, config) 
 	{
 		if(data.success == 1)
@@ -53,7 +53,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /****************************************************************************/
 	// All Products
 	
-	$http.get('http://localhost/cloud/hybrid/total_get.php')
+	$http.get('http://www.pythonpprjejeccts.org/ieee/hybrid/total_get.php')
 	.success(function (response) 
 	{
 		if(response.success == 1)
@@ -65,7 +65,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /****************************************************************************/
 /************************** Total Estimate Report **************************/
 /****************************************************************************/
-	$http.get('http://localhost/cloud/hybrid/project_get.php')
+	$http.get('http://www.pythonpprjejeccts.org/ieee/hybrid/project_get.php')
 	.success(function (response) 
 	{
 		if(response.success == 1)
@@ -79,7 +79,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /************************** View all Sales **********************************/
 /****************************************************************************/
 
-	$http.get('http://localhost/cloud/hybrid/sales_get.php')
+	$http.get('http://www.pythonpprjejeccts.org/ieee/hybrid/sales_get.php')
 	.success(function (response) 
 	{
 		if(response.success == 1)
@@ -92,7 +92,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /************************** View all Task **********************************/
 /****************************************************************************/
 
-	$http.get('http://localhost/cloud/hybrid/task_get.php')
+	$http.get('http://www.pythonpprjejeccts.org/ieee/hybrid/task_get.php')
 	.success(function (response) 
 	{
 		if(response.success == 1)
@@ -108,7 +108,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 	// products_delete
 	$scope.confirm_sales = function(customer_id) 
 	{		
-        $http.post('http://localhost/cloud/hybrid/confirm_sales.php', 
+        $http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/confirm_sales.php', 
 		{
 		'customer_id': customer_id
 		})
@@ -137,7 +137,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 	// All Products
 	$scope.status = $cookieStore.get("status");	
 	
-	$http.post('http://localhost/cloud/hybrid/products_get.php',{'status':$scope.status})
+	$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/products_get.php',{'status':$scope.status})
 		.success(function (data, status, headers, config) 
 		{
 			if(data.success == 1)
@@ -155,7 +155,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /****************************************************************************/
 	$scope.product_add = function() 
 	{
-	$http.post('http://localhost/cloud/hybrid/products_add.php', {
+	$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/products_add.php', {
 	'empid': $scope.empid, 'pname': $scope.pname,  'pimage': $scope.pimage,  
 	'description': $scope.description,'price': $scope.price, 
 	 'size': $scope.size,'stock': $scope.stock, 'specification': $scope.specification,
@@ -186,7 +186,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 	// products_delete
 	$scope.product_delete = function(product_id) 
 	{		
-        $http.post('http://localhost/cloud/hybrid/products_delete.php', 
+        $http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/products_delete.php', 
 		{
 		'product_id': product_id
 		})
@@ -246,7 +246,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 		
 $scope.product_update_data = function() 
 	{
-	$http.post('http://localhost/cloud/hybrid/products_update.php', {
+	$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/products_update.php', {
 			'product_id': $scope.product_id,'emp_id': $scope.emp_id,'pname': $scope.pname, 
 			'pimage': $scope.pimage,  'description': $scope.description,
 			'price': $scope.price, 'size': $scope.size,
@@ -347,7 +347,7 @@ $scope.product_update_data = function()
 
 	$scope.sales_create = function() 
 	{		
-		$http.post('http://localhost/cloud/hybrid/sales_create.php', 
+		$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/sales_create.php', 
 		{'fname': $scope.fname, 'lname':$scope.lname, 'email':$scope.email,
 		'password': $scope.password,'plotno': $scope.plotno,'sqfeet': $scope.sqfeet,
 		'cname': $scope.cname,'cusid': $scope.cusid,
@@ -420,7 +420,7 @@ $scope.product_update_data = function()
 /****************************************************************************/
 	$scope.sales_update = function() 
 	{
-	$http.post('http://localhost/cloud/hybrid/sales_update.php', {
+	$http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/sales_update.php', {
 			'customer_id': $scope.customer_id,'fname': $scope.fname, 'lname':$scope.lname, 'email':$scope.email,
 			'password': $scope.password,'plotno': $scope.plotno,'sqfeet': $scope.sqfeet,
 			'cname': $scope.cname,'cusid': $scope.cusid,'address': $scope.address,
@@ -467,7 +467,7 @@ $scope.product_update_data = function()
 	// products_delete
 	$scope.sales_delete = function(customer_id) 
 	{		
-        $http.post('http://localhost/cloud/hybrid/sales_delete.php', 
+        $http.post('http://www.pythonpprjejeccts.org/ieee/hybrid/sales_delete.php', 
 		{
 		'customer_id': customer_id
 		})
