@@ -11,7 +11,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 	// sign in button
 	$scope.login = function() 
 	{		
-        $http.post('http://www.pythonprojects.org/ieee/hybrid/login.php', 
+        $http.post('http://ieee.pythonprojects.org/login.php', 
 			{'email': $scope.email, 'password':$scope.password})
 		.success(function(data, status, headers, config) 
 		{
@@ -41,7 +41,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 
 	$scope.register = function() 
 	{		
-		$http.post('http://www.pythonprojects.org/ieee/hybrid/register.php',{
+		$http.post('http://ieee.pythonprojects.org/register.php',{
 		 'name':$scope.name,'mobile': $scope.mobile,'email':$scope.email,'password':$scope.password})
 		.success(function(data, status, headers, config) 
 		{
@@ -82,7 +82,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 /************************** Get My Files ***********************************/
 /****************************************************************************/
 
-	$http.post('http://www.pythonprojects.org/ieee/hybrid/get_files.php', {'email': $scope.cook_user_email})
+	$http.post('http://ieee.pythonprojects.org/get_files.php', {'email': $scope.cook_user_email})
 	.success(function(data, status, headers, config) 
 	{
 		if(data.success == 1)
@@ -101,7 +101,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 	
 		$scope.file_delete = function(cus_id) 
 	{		
-        $http.post('http://www.pythonprojects.org/ieee/hybrid/file_delete.php', 
+        $http.post('http://ieee.pythonprojects.org/file_delete.php', 
 		{
 		'cus_id': cus_id
 		})
@@ -141,7 +141,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 		
 		$scope.verify_token = function() 
 		{				
-			$http.post('http://www.pythonprojects.org/ieee/hybrid/verify_token.php', {
+			$http.post('http://ieee.pythonprojects.org/verify_token.php', {
 				'id': $scope.cook_cus_id,'token': $scope.token })
 			.success(function(data, status, headers, config) 
 			{
@@ -158,7 +158,7 @@ app.controller("myappCtrl", function($scope, $cookies, $cookieStore, $http)
 		}
 
 //, {'email': $scope.cook_user_email}
-	$http.post('http://www.pythonprojects.org/ieee/hybrid/get_files.php')
+	$http.post('http://ieee.pythonprojects.org/get_files.php')
 	.success(function(data, status, headers, config) 
 	{
 		if(data.success == 1)
